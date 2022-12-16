@@ -49,13 +49,38 @@ console.log(myModule)
 # NPM - Node Package Manager
 
 > o NPM é um gerenciador de pacotes. Esse, por sua vez, é um ambiente para a execução de JavaScript no lado do servidor de hospedagem. Em outras palavras, ele permite utilizar a linguagem JavaScript no back-end da aplicação.
-
+```
 npm init
+// Começando um arquivo NPM manualmente
 
+npm init -y
+// Começando um arquivo NPM com todas as configurações em "yes"
+```
+```
 npm install "pacote"
-npm instal "pacote@version"
+// Instalando um pacote
+
+npm install "pacote" -D
+// Instalando um pacote de desenvolvimento
+
+npm install "pacote" -G
+// Instalando um pacote global
+
+npm install "pacote@version"
+// Instalando um pacote e definindo a versão
+
+npm install "pacote@latest"
+// Instalando um pacote com a ultima versão
+
 npm uninstall "pacote"
+// Desistalando o pacote
+
 npm upgrade
+//
+```
+
+
+
 
 # Timers
 
