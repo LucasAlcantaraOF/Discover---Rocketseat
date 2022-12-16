@@ -356,3 +356,27 @@ __Falsy e Truthy__
 * -1
 * Infinity
 * -Infinity
+
+# Condicionais
+> Estrutura que vai executar o código, caso verdadeiro ou não executar, caso falso, dependendo do nosso objetivo
+
+__if e else__
+
+```
+// Ideia basica de medidor de temperatura
+
+let temperature = 36.9
+let highTemperature = temperature >= 37.5
+let mediumTemperature = temperature >= 37.5 && >= 37
+
+if(highTemperature) {
+    console.log('Febre alta')
+} else if(mediumTemmperature) {
+    console.log('Febre média')
+} else {
+    console.log('Sem febre')
+}
+```
+
+__Switch Case__
+> 
