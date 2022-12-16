@@ -29,7 +29,7 @@ __String__
 * "" Aspas Duplas
 * '' Aspas Simples
 * `` Crase
-
+---
 __Number__
 > Números
 
@@ -37,25 +37,28 @@ __Number__
 * 12.5:  Reais - float
 * NaN: Not a number
 * Infinity: Infinito
-
+---
 __Boolean__
 > Booleano: apenas pode ser verdadeiro ou falso
 
 * true: Verdadeiro
 * false: Falso
-
+---
 __Undefined x Null__
 > Indefinido e Nulo
 
 * Undefined: Valor indefinido
 * Null: Valor nulo (Não existe)
-
+---
 __Objeto__
 > Objeto é uma entidade independente, com propriedades e tipos.
 
+Estrutura base:
 ```
 {propriedade: "valor"}
-
+```
+Exemplo de Objeto:
+```
 console.log({
     name: "Lucas",
     idade: 17,
@@ -69,9 +72,17 @@ const person = {
     isAdmin: true
 }
 ```
-
+---
 __Array__
 > Armazenar uma coleção de elementos em uma única variável
+
+```
+propriedade = [
+    'valor1',
+    'valor2',
+]
+```
+Exemplo de Array
 ```
 const persons = [
     'Lucas',
@@ -90,13 +101,13 @@ var clima = "Quente"
 // Uma variável foi definida.
 ```
 
-> Manipulando variável
+Manipulando variável:
 ```
 var clima = "Quente"
 clima = "Frio"
-// Uma variável foi definida e logo após um novo valor foi fornecido para ela.
+// Uma alteração válida.
 ```
-
+---
 __let__
 > Let, uma variável que pode ser alterada, mas não possui o método de hoisting.
 
@@ -105,13 +116,13 @@ let phrase = "Amanda é pateta"
 // Um let foi definido
 ```
 
+Manipulando let:
 ```
 let phrase = "Amanda é pateta"
 phrase = "Eu gosto da Amanda"
 // Uma alteração válida.
 ```
- 
-
+ ---
 __const__
 > Constante, valor que não pode ser alterado e possui dinamismo de scope
 
@@ -119,10 +130,12 @@ __const__
 const userAdmin = true
 // Uma constante recebeu o valor bolleano de "true", portanto, não poderá ser alterado naquele scope.
 ```
+
+Manipulando const:
 ```
 const userAdmin = true
 userAdmin = false
-// 
+// Error...
 ```
 
 # Concatenando e Interpolando 
@@ -151,7 +164,7 @@ function phrases() {
 
 phrases()
 ```
-
+---
 __Parâmetros e Argumentos__
 
 ```
@@ -161,7 +174,7 @@ const sum = function(number1, number2) {          // Dentro dos () temos parâme
 
 sum(2,3)                                          // Dentro dos () temos argumentos
 ```
-
+---
 __Function Arrow__
 > Declara funções mais "clean". Não possui o método de Hoisting
 
@@ -173,6 +186,7 @@ const sayMyName = () => {
 sayMyName()
 
 ```
+---
 __Callback function__
 > Função que passa como parâmetro para outra função.
 
@@ -189,7 +203,7 @@ sayMyName(
     }
 )
 ```
-
+---
 __Function Constructor__
 
 ```
@@ -283,7 +297,7 @@ __Operadores Aritméticos__
 * Incremento: ++
 * Decremento: --
 * Exponencial: ^ 
-
+---
 __Operadores de comparação__
 > Existem diversas necessidades de comparar um número ao outro em uma aplicação. Assim, faz-se necessário revisar os fundamentos de comparação da matemática
 
@@ -315,7 +329,7 @@ one < 2
 // Menor ou igual que:
 one <= 1
 ```
-
+---
 __Operadores lógicos__
 
 ```
@@ -343,7 +357,7 @@ __Falsy e Truthy__
 * null
 * Undefined
 * NaN
-
+---
 > TRUTHY: Valores booleanos que são considerados verdadeiros
 
 * true
@@ -361,7 +375,19 @@ __Falsy e Truthy__
 > Estrutura que vai executar o código, caso verdadeiro ou não executar, caso falso, dependendo do nosso objetivo
 
 __if e else__
+> A condicional if é uma estrutura condicional que executa a afirmação, dentro do bloco, se determinada condição for verdadeira. Se for falsa, executa as afirmações dentro de else.
 
+Estrutura Base:
+```
+if(propriedade1) {
+    //codigo
+} else if(propriedade2){
+    //codigo
+} else {
+    //codigo
+}
+```
+Exemplo de If e Else:
 ```
 // Ideia basica de medidor de temperatura
 
@@ -377,6 +403,70 @@ if(highTemperature) {
     console.log('Sem febre')
 }
 ```
-
+---
 __Switch Case__
-> 
+> O switch case é uma estrutura condicional do Javascript como o if e else, serve para analisar os valores e executar um bloco de código condicionalmente. Normalmente é utilizado, quando se deseja analisar diversos valores diferentes para a mesma variável.
+
+Estrutura base
+```
+switch(expression) {
+    case 'a':
+        //código a
+        break
+    case 'b':
+        //código b
+        break
+    default: 
+        //código nulo
+        break
+}
+```
+
+Exemplo de Switch Case: 
+```
+// Validação de um Admin
+
+isAdmin = true;
+
+switch (isAdmin) {
+    case true:
+        console.log("Usuário logado");
+        break;
+    case false:
+        console.log("Você não é um admin");
+        break;
+}
+```
+---
+__Throw e Try/Catch__
+>
+
+Estrutura Base:
+```
+throw expression {
+    // codigo
+}
+
+try {
+    expression
+} catch(e){
+    //codigo
+}
+```
+
+Exemplo de Throw e Try/Catch:
+```
+function sayMyName(name = ' ') {
+    if (name === ' ') {
+        throw 'Nome é obrigatório'
+    }
+}
+
+try {
+    sayMyName(Lucas)
+} catch(e) {
+    console.log(e)
+}
+```
+
+# Estruturas de repetição
