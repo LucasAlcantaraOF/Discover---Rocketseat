@@ -269,3 +269,90 @@ let word = "Gabriele"
 console.log(Array.from(word))
 ```
 
+# Expressões e Operadores
+
+__Operadores Aritméticos__
+> A programação utiliza operadores da matemática na sua composição, portanto, vale entender os sinais correspondentes a matemática no JavaScript
+
+* Multiplicação: *
+* Divisão: /
+* Adição: +
+* Subtração: -
+
+* Resto da divisão: %
+* Incremento: ++
+* Decremento: --
+* Exponencial: ^ 
+
+__Operadores de comparação__
+> Existem diversas necessidades de comparar um número ao outro em uma aplicação. Assim, faz-se necessário revisar os fundamentos de comparação da matemática
+
+```
+let one = 1
+let two = 2
+
+// Igual a:
+one == 1
+
+// Diferente de:
+two != 1
+
+// Estritamente igual a:
+one === 1
+
+// Estritamente diferente de:
+two !== "2"
+
+// Maior que:
+two > one
+
+// Maior ou igual que:
+two >= 2
+
+// Menor que
+one < 2
+
+// Menor ou igual que:
+one <= 1
+```
+
+__Operadores lógicos__
+
+```
+let isAdmin = true
+let user = false
+
+// AND &&
+console.log(isAdmin && user) - true
+
+// OR || - true
+console.log(isAdmin || user)
+
+// NOT ! - false
+console.log(!isAdmin)
+```
+
+__Falsy e Truthy__
+
+> FALSY: Valores booleanos que são considerados falsos
+
+* false
+* 0
+* -0
+* ""
+* null
+* Undefined
+* NaN
+
+> TRUTHY: Valores booleanos que são considerados verdadeiros
+
+* true
+* {}
+* []
+* 1
+* 1.11
+* "0"
+* "false"
+* -1
+* Infinity
+* -Infinity
