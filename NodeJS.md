@@ -104,3 +104,45 @@ setTimeout(finished, timeOut)
 
 console.log('Resposta enviada imediatamente')
 ```
+
+__clearTimeout__
+
+```
+// clearTimeout cancelar uma timeOut
+const timeOut = 3000
+const finished = () => console.log('Done')
+// Realizamos um registro e colocamos no setTimeout
+
+let timer = setTimeout(finished, timeOut)
+clearTimeout(timer)
+// Cancelamos o timer e encerramos a operação
+````
+
+__setInterval__
+
+```
+// setInterval roda uma função x vezes, depois de y milissegundos
+
+const timeOut = 1000
+const checking = () => console.log('Checking!')
+// Um "agente" vai ficar checando esse time sem fim!
+
+setInterval(checking, timeOut)
+// Dois argumento(função, tempo)
+```
+
+__clearInterval__
+
+```
+// clearInterval cancela o setInterval
+
+const timeOut = 1000
+const checking = () => console.log('Checking!')
+// Um "agente" vai ficar checando esse time sem fim!
+
+let interval = setInterval(checking, timeOut)
+clearInterval(interval)
+
+setTimeout( () => clearInterval(interval), 3000)
+// Definindo um timer para executar o clearInterval
+```
