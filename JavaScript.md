@@ -1,6 +1,5 @@
 # JavaScript 
 
-
 __Linkar JS no HTML__
 
 ```
