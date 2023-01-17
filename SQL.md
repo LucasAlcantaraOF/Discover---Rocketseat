@@ -194,16 +194,90 @@ __OR__
 SELECT * FROM alunos WHERE matricula < 50 OR nome like "%A"
 ```
 
-__BETWEEN__
+__BETWEEN / NOT BETWEEN__
 
->
+> Método para realizar a pesquisa entre um x valor para outro y valor.
 
 ```
-// 
+// EXEMPLO 1: Preciso procurar matriculas de alunos entre o valor 10 ao 1000. 
 
-SELECT * FROM 
+SELECT * FROM alunos WHERE matriculas BETWEEN 10 and 1000
+
+
+// EXEMPLO 2: Preciso procurar matriculas de alunos, mas quero desprezar os estudantes entre o valor 10 ao 1000.
+
+SELECT * FROM alunos WHERE matriculas NOT BETWEEN 10 and 1000
 ```
 
+__IN / NOT IN__
+
+> Relizando busca de valores especificos determinado por IN, paralelamente, fazendo buscas em todos os valores menos os definidos no NOT IN
+
+```
+// EXEMPLO 1: Procurando os alunos que estão cursando os anos letivos do 3º EM, 9º EF e 5º EF. 
+
+SELECT * FROM alunos WHERE ano_letivo IN (3,9,5)
+
+
+// EXEMPLO 2: Procurando os alunos que estão cursando os anos letivos, desprezando os do 3º EM, 9º EF e 5º EF. 
+
+SELECT * FROM alunos WHERE ano_letivo NOT IN (3,9,5)
+```
+
+__NULL / NOT NULL__
+
+```
+// EXEMPLO 1: Dentro do meu banco de dados existem diversos alunos que não possuem um número para contato.
+// portanto, preciso avaliar os campos nulos.
+
+SELECT * FROM alunos WHERE number_contact IS NULL
+
+
+// EXEMPLO 2: Dentro do meu banco de dados existem diversos alunos que não possuem um número para contato.
+// Entretanto, gostaria de apenas avaliar os que possuem dado no campo
+
+SELECT * FROM alunos WHERE number_contact IS NOT NULL
+```
+
+#  Modificando tabelas
+
+__INSERT__
+
+> Trabalhando em inserir valores para uma tabela
+
+```
+INSERT INTO <nomedatabela> (campo1, campo2, campo2) VALUES (dado1, dado2, 'dado3')
+
+
+// EXEMPLO: Inserindo um novo aluno
+INSERT INTO alunos (nome, cpf, responsavel) VALUES ('Lucas Alcântara', 85547486394, 'Mara Edwirges')
+```
+
+__UPDATE__
+
+> Alterando algum dado que foi inserido anteriormente
+
+```
+UPDATE <nomedatabela> SET campo1='dado_novo1', campo2='dado_novo2' WHERE id = <dado>
+
+
+// EXEMPLO: Alterando o responsavel do cadastro anterior da escola[
+UPDATE alunos SET responsavel='Cleylton Luiz' WHERE matricula = 4
+```
+> PS: WHERE defini especificamente qual campo alterar, vale rememorar que a falta de especificação dele, causara a alteração de todos os campos.
+
+__DELETE__
+
+> Excluir um registro.
+
+```
+DELETE FROM <nomedatabela> WHERE <campo> = <valor>
+
+
+// EXEMPLO: O aluno foi expulso da escola e precisa ser retirado o registro dele.
+DELETE FROM alunos WHERE matricula = 4
+```
+> PS: WHERE defini especificamente qual campo deletar, vale rememorar que a falta de especificação dele, causara o apagamento de todos os campos.
 
 
 # Tradução de termos
@@ -223,3 +297,4 @@ __WHERE = "Onde" definir uma condição para pesquisa__
 </br>
 __like = "Contendo" definir um pesquisa que contem um X dado desejado__
 </br>
+
