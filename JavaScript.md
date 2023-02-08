@@ -11,6 +11,8 @@ __Linkar JS no HTML__
 __Comentário em JS__
 
 ```
+SHIFT + ALT + A
+
 // Comentário
 
 /*
@@ -449,7 +451,7 @@ throw expression {
 try {
     expression
 } catch(e){
-    //codigo
+    //codigo 
 }
 ```
 
@@ -468,4 +470,177 @@ try {
 }
 ```
 
-# Estruturas de repetição
+# Estrutura de Dados
+
+> Com a quantidade de caracteres que escrevemos dentro da nossa aplicação, formou-se a necessidade de haver uma organização para entendimento do autor e dos futuros leitores, portanto, entender as estruturas é o principio para a melhor tomada de decisão, visto que a programação é utilizada para criar eficiência e rapidez em atividades que levariam o dobro do tempo para uma pessoa realizar. 
+
+__Stack__
+
+> Stack seria o método linear de organização, como uma pilha onde o último a entrar seria o primeiro a sair.
+
+__.push() - Adicionar um elemento à pilha__
+<br>
+__.pop() - Remover o elemento do topo da pilha__
+<br>
+__.peek() - Obter o elemento do topo da pilha__
+
+__Queue__
+
+> Queue seria o método de fila, ou seja, o primeiro a entrar na fila seria o primeiro a sair.
+
+__enqueue() - Adicionar um elemento ao final da fila__
+<br>
+__dequeue() - Remover o primeiro elemento a entrar na fila__
+
+```
+class Queue {
+    constructor() {
+        this.data = []
+    }
+    enqueue(item) {
+        this.data.push(item)
+        console.log(`${item} entrou na fila!`)
+    }
+
+    dequeue() {
+        const item = this.data.shift()
+        console.log(`${item} saiu da fila!`)
+    }
+
+}
+
+const fila = new Queue()
+
+fila.enqueue('Lucas')
+fila.enqueue('Paiva')
+fila.enqueue('Gabriela')
+fila.dequeue()
+fila.dequeue()
+fila.dequeue()
+```
+
+# Programação Orientada a Objetos (POO)
+
+> POO seria um paradigma de desenvolvimento, uma maneira de resolver um problema, um modo de pensar. Primeiramente, Criando um recurso com melhor entedimento, sendo adequado para um reuso de código, separando a compexidade de abstraindo de maneira mais simples.
+</br>
+> Objetos, como dito no nome seriam utensílios recorrentes do seu dia-a-dia, entrentanto, na programação, seriam autenticações, autorizações entre outros, ou seja, ideias abstratas.
+</br>
+> "Paradigma = Estrutura composta por conceitos, teorias, experiências, métodos... que serve para organizar um determinado afetado"
+
+__Conceitos__
+
+> Todo objeto possui:
+>* Propriedades e Funcionalidades
+>* Estado e Comportamentos
+>* Atributos e Métodos
+<br>
+
+
+__Classes em JS__
+
+```
+
+================ Método Estrutural ================
+let altura = 50
+let largura = 60
+
+function calcularArea() {
+    return altura * largura
+}
+
+let area = calcularArea()
+
+console.log(area)
+
+================ Método POO ================
+
+class Poligono{
+    constructor(altura, largura){
+        this.altura = altura
+        this.largura = largura
+    }
+
+    get area() {
+        return this.#calcularArea()
+    }
+    
+    // O # seria um definição que so seria utilizado dentro da class...
+    #calcularArea() {
+        return this.altura * this.largura
+    }
+}
+
+let poligono = new Poligono(50,60)
+console.log(poligono.area)
+```
+ 
+__Herança em JS__
+
+> Herança seria o conceito de pai e filho, podemos puxar uma definição criada no pai e implementar no filho.
+
+```
+class Veiculo {
+    rodas = 4;
+
+    mover(direcao){}
+    virar(direcao){}
+}
+
+// "extends" e "super()" que desiginaram a herança
+class Moto extends Veiculo {
+    constructor() {
+        super()
+        this.rodas = 2
+    }
+}
+```
+
+__Polimorfismo em JS__
+
+> Com o método de herança, podemos reutilizar trechos de códigos indenticos de pai para filho, mas também pode-se alterar algum atributo caso necessário.
+
+```
+class Atleta {
+    peso;
+    categoria;
+
+    constructor(peso){
+        this.peso = peso
+    }
+
+    definirCategoria() {
+        if (this.peso <= 50){
+            this.categoria = 'Corredor Leve'
+        }
+        else if (this.peso <= 65) {
+            this.categoria = 'Corredor Médio'
+        }
+        else {
+            this.categoria = 'Corredor Pesado'
+        }
+    }
+}
+
+class Lutador extends Atleta {
+    constructor(peso){
+        super(peso)
+    }
+
+    definirCategoria() {
+        if (this.peso <= 60){
+            this.categoria = 'Peso Leve'
+        }
+        else if (this.peso <= 75) {
+            this.categoria = 'Peso Médio'
+        }
+        else {
+            this.categoria = 'Peso Pesado'
+        }
+    }
+}
+```
+
+__Abstração__
+
+
+# Programação Funcional

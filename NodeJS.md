@@ -79,9 +79,6 @@ npm upgrade
 //
 ```
 
-
-
-
 # Timers
 
 > Trabalhando com tempo dentro do Node.JS, ou seja, agendar que alguma parte do nosso codigo seja executado depois de x milisegundos.
